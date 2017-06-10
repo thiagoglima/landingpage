@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <title>Investidor Inovador</title>
+
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="js/modernizr-2.7.1.js"></script>
+
+    <script type="text/javascript">
+        function Cadastro() {
+
+
+
+            if (document.getElementById('tNome').value == "") {
+                alert('Informe seu nome !');
+                setTimeout("document.getElementById('tNome').focus();", 500);
+                return false;
+            }
+
+            if (document.getElementById('tsNome').value == "") {
+                alert('Informe seu sobrenome !');
+                setTimeout("document.getElementById('tsNome').focus();", 500);
+                return false;
+            }
+
+            if (document.getElementById('tEmail').value == "") {
+                alert('Informe seu email !');
+                setTimeout("document.getElementById('tEmail').focus();", 500);
+                return false;
+            }
+
+
+            var check = document.getElementsByName("interesse");
+            var boleano = false;
+            var cont = 0;
+            for (var i = 0; i < check.length; i++) {
+                if (check[i].checked == true) {
+                    boleano = true;
+                    cont++
+
+                }
+            }
+            if (boleano == false) {
+                alert('Escolha pelo menos um interesse!');
+                return false;
+            }
+
+            if (cont > 1) {
+                alert('Por favor, selecione apenas 1 interesse!');
+                return false;
+            }
+
+            if (check[2].checked == true) {
+                if (document.getElementById("especifique").value == "") {
+                    alert('Informe qual o seu interesse no campo \"especificar\"');
+                    setTimeout("document.getElementByName('outros').focus();", 500);
+                    return false;
+                }
+            }
+
+        }
+    </script>
+
+<!-- Analytics -->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-99717399-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+    
+
+   
+    <!-- Facebook Pixel Code -->
+<script>
+	!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+	n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+	n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+	t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+	document,'script','https://connect.facebook.net/en_US/fbevents.js');
+	fbq('init', '635202576680455'); // Insert your pixel ID here.
+	fbq('track', 'PageView');
+	fbq('track', 'Lead');
+	
+	
+	
+</script>
+<noscript><img height="1" width="1" style="display:none"
+	src="https://www.facebook.com/tr?id=635202576680455&ev=PageView&noscript=1"
+/></noscript>
+
+
+
+
+</head>
+
+<body>
+
+    <header>
+        <div id="divLogo">
+            <img class="logo" href="#" src="img/logo_fundo_transparente.png" width="100%" height="100%" />
+        </div>
+        <div class="row header-info">
+            <div class="col-sm-10 col-sm-offset-1 text-center">
+                <h1 class="wow fadeIn">Bitcoin: Guia Prático</h1>
+                <p class="lead wow fadeIn" data-wow-delay="0.5s">Receba no seu email um ebook completo sobre a moeda digital que está revolucionando o mundo dos investimentos.</p>
+
+            </div>
+        </div>
+
+    </header>
+    <section id="invite" class="pad-lg light-gray-bg">
+        <div class="container">
+            <div class="row">
+                <div class="text-center">
+                    <div class="coluna">
+                        <!--<h2 class="black">Cadastre-se para receber seu EBOOK</h2>-->
+                        <img class="ebook" href="#" src="img/capa_ebook.png" width="80%" />
+                        <br />
+                        <p class="resumo">O que é o Bitcoin? Como ele foi criado? Como funciona? Por que essa moeda está revolucionando o mercado? E por que eu preciso entender isso agora? Todas essas respostas + uma entrevista com o CEO da Bit.One, Thiago César, estão no eBook gratuito que chegará no seu e-mail!</p>		
+                        <p class="resumo"> O eBook estará disponivel até dia 26/05/17, não perca esta oportunidade!    </p>
+						<p class="resumo">Seja bem vindo ao mundo das moedas digitais!</h3>
+                    </div>
+                    <div class="coluna">
+                        <div class="">
+                            <div id="div-topo-form">
+                                Cadastre-se para receber seu EBOOK
+                            </div>
+                            <form method="POST" action="form-handler.php" role="form">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="nome" id="tNome" placeholder="Digite Seu Nome">
+                                    <br />
+                                    <input type="text" class="form-control" name="snome" id="tsNome" placeholder="Digite Seu Sobrenome">
+                                    <br />
+                                    <input type="text" class="form-control" name="email" id="tEmail" placeholder="Digite Seu Email">
+                                    <br />
+                                    <label class="form-label">interesse:</label>
+                                    <label class="form-option"><input type="checkbox" name="interesse" id="ckbTec" value="1">&nbsp; Tecnologia & Inovação</label>
+                                    <label class="form-option"><input type="checkbox" name="interesse" id="ckbInv" value="2">&nbsp; Investimentos</label>
+                                    <label class="form-option"><input type="checkbox" name="interesse" id="ckbOut" value="3">&nbsp; Outros:</label>
+                                    <input type="text" class="form-control" name="especifique" id="especifique" placeholder="Especifique">
+                                </div>
+                                <button type="submit" onclick="return Cadastro();" class="btn btn-primary btn-lg" id="botao">RECEBER EBOOK</button>
+								
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="text-center">
+            <p><small>Copyright 2017. Todos os Direitos Reservados.</small></p>
+        </div>
+    </footer>
+</body>
+
+</html>
